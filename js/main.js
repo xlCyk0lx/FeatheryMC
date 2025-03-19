@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         particlesJS('particles-js', {
             particles: {
                 number: {
-                    value: 50,
+                    value: 80,
                     density: {
                         enable: true,
                         value_area: 800
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     enable: true,
                     distance: 150,
                     color: "#ff7d00",
-                    opacity: 0.2,
+                    opacity: 0.3,
                     width: 1
                 },
                 move: {
                     enable: true,
-                    speed: 2,
+                    speed: 1.5,
                     direction: "none",
                     random: true,
                     straight: false,
@@ -75,11 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     grab: {
                         distance: 140,
                         line_linked: {
-                            opacity: 0.5
+                            opacity: 0.8
                         }
                     },
                     push: {
-                        particles_nb: 3
+                        particles_nb: 4
                     }
                 }
             },
@@ -307,67 +307,3 @@ function updateServerStatus() {
     // Schedule next update (every 1-2 minutes)
     setTimeout(updateServerStatus, Math.random() * 60000 + 60000);
 }
-
-// Add CSS for the copy tooltip
-const style = document.createElement('style');
-style.textContent = `
-.copy-tooltip {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 125, 0, 0.9);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    z-index: 9999;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: tooltip-appear 0.3s ease-out;
-}
-
-.copy-tooltip.fade-out {
-    animation: tooltip-disappear 0.5s ease-out forwards;
-}
-
-@keyframes tooltip-appear {
-    from { opacity: 0; transform: translate(-50%, -60%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
-}
-
-@keyframes tooltip-disappear {
-    from { opacity: 1; transform: translate(-50%, -50%); }
-    to { opacity: 0; transform: translate(-50%, -40%); }
-}
-
-.scroll-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 999;
-}
-
-.scroll-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.scroll-top:hover {
-    background: var(--primary-dark);
-    transform: translateY(-5px);
-}
-`;
-document.head.appendChild(style);
