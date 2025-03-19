@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeatheryMC - Minecraft Network</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Minecraft&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="images/logo.svg" alt="FeatheryMC">
+            <span>FeatheryMC</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#gamemodes">Gamemodes</a>
+            <a href="#store">Store</a>
+            <a href="#discord" class="discord-btn">
+                <i class="fab fa-discord"></i> Discord
+            </a>
+        </div>
+    </nav>
 
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to FeatheryMC</h1>
+            <p>Experience unique gamemodes and epic adventures</p>
+            <div class="server-info">
+                <span class="ip">play.featherymc.com</span>
+                <button class="copy-ip">Copy IP</button>
+            </div>
+            <div class="online-players">
+                <span class="dot"></span>
+                <span id="player-count">1,337 Players Online</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="gamemodes" class="gamemodes">
+        <h2>Our Gamemodes</h2>
+        <div class="gamemode-grid">
+            <div class="gamemode-card">
+                <div class="card-content">
+                    <h3>Lifesteal</h3>
+                    <p>Steal hearts from players to increase your max health!</p>
+                    <span class="mode-tag">Steal4Lifes</span>
+                </div>
+            </div>
+            <div class="gamemode-card">
+                <div class="card-content">
+                    <h3>Dupe-Lifesteal</h3>
+                    <p>Combine duplication with heart stealing!</p>
+                    <span class="mode-tag">Dupe4Lifes</span>
+                </div>
+            </div>
+            <div class="gamemode-card">
+                <div class="card-content">
+                    <h3>Endwars</h3>
+                    <p>Battle in the End dimension!</p>
+                    <span class="mode-tag">Bedwars</span>
+                </div>
+            </div>
+            <div class="gamemode-card">
+                <div class="card-content">
+                    <h3>RandoKits</h3>
+                    <p>Fight with random kits each round!</p>
+                    <span class="mode-tag">RandomKits</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="store" class="store">
+        <h2>Support the Network</h2>
+        <div class="store-packages">
+            <div class="package">
+                <h3>Feather</h3>
+                <div class="price">$5.99</div>
+                <ul>
+                    <li>Custom Chat Color</li>
+                    <li>2 Home Points</li>
+                    <li>Special Cosmetics</li>
+                </ul>
+                <button class="buy-btn">Purchase</button>
+            </div>
+            <div class="package featured">
+                <h3>Phoenix</h3>
+                <div class="price">$14.99</div>
+                <ul>
+                    <li>All Feather Features</li>
+                    <li>5 Home Points</li>
+                    <li>Priority Queue</li>
+                    <li>Exclusive Effects</li>
+                </ul>
+                <button class="buy-btn">Purchase</button>
+            </div>
+            <div class="package">
+                <h3>Dragon</h3>
+                <div class="price">$29.99</div>
+                <ul>
+                    <li>All Previous Features</li>
+                    <li>10 Home Points</li>
+                    <li>Custom Join Message</li>
+                    <li>Special Discord Role</li>
+                </ul>
+                <button class="buy-btn">Purchase</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.svg" alt="FeatheryMC">
+                <span>FeatheryMC</span>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="copyright">© 2023 FeatheryMC. Not affiliated with Mojang AB.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
