@@ -6,9 +6,12 @@
     <title>FeatheryMC - Minecraft Network</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Minecraft&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/feather-favicon.png">
 </head>
 <body>
+    <div id="particles-js"></div>
+    
     <header>
         <div class="container">
             <div class="logo">
@@ -16,68 +19,80 @@
                 <h1>FeatheryMC</h1>
             </div>
             <nav>
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#gamemodes">Gamemodes</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#connect">Connect</a></li>
+                    <li><a href="#" class="btn">Store</a></li>
                 </ul>
+                <div class="mobile-toggle" id="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </nav>
         </div>
     </header>
 
     <section id="hero">
         <div class="container">
-            <h1>Welcome to FeatheryMC</h1>
-            <p>Join the adventure on play.FeatheryMC.org</p>
-            <div class="server-ip">
-                <span id="ip">play.FeatheryMC.org</span>
-                <button onclick="copyIP()"><i class="fas fa-copy"></i> Copy IP</button>
+            <div class="hero-content">
+                <h1>Welcome to FeatheryMC</h1>
+                <p>Experience unique gameplay on the most exciting Minecraft network</p>
+                <div class="server-ip">
+                    <span id="ip">play.FeatheryMC.org</span>
+                    <button onclick="copyIP()" class="btn"><i class="fas fa-copy"></i> Copy IP</button>
+                </div>
+                <div class="player-count">
+                    <i class="fas fa-users"></i> Players Online: <span id="player-count">Loading...</span>
+                </div>
             </div>
-            <div class="player-count">
-                <span>Players Online: <span id="player-count">Loading...</span></span>
+            <div class="scroll-down" id="scroll-down">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
     </section>
 
     <section id="gamemodes">
         <div class="container">
-            <h2>Our Gamemodes</h2>
+            <div class="section-title fade-in">
+                <h2>Our Gamemodes</h2>
+                <p>Discover unique gameplay experiences on our network</p>
+            </div>
             <div class="gamemode-grid">
-                <div class="gamemode-card">
+                <div class="gamemode-card fade-in">
                     <div class="gamemode-icon">
                         <img src="images/lifesteal-icon.png" alt="Lifesteal">
                     </div>
                     <h3>Steal4Lifes</h3>
-                    <p>Kill other players to gain hearts but if you die you lose hearts. The ultimate survival challenge!</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <p>Kill other players to gain hearts but if you die you lose hearts. The ultimate survival challenge where your life is literally on the line!</p>
+                    <a href="#" class="btn">Play Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="gamemode-card">
+                <div class="gamemode-card fade-in">
                     <div class="gamemode-icon">
                         <img src="images/dupe-icon.png" alt="Lifesteal Dupe">
                     </div>
                     <h3>Dupe4Lifes</h3>
-                    <p>A lifesteal server with one extra twist - a /dupe command to duplicate any item you can think of!</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <p>A lifesteal server with one extra twist - a /dupe command to duplicate any item you can think of! Collect hearts and create the ultimate inventory.</p>
+                    <a href="#" class="btn">Play Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="gamemode-card">
+                <div class="gamemode-card fade-in">
                     <div class="gamemode-icon">
                         <img src="images/bedwars-icon.png" alt="Bedwars">
                     </div>
                     <h3>Endwars</h3>
-                    <p>Protect your bed and destroy others! Collect resources, upgrade your gear, and eliminate other teams.</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <p>Protect your bed and destroy others! Collect resources, upgrade your gear, and eliminate other teams in this fast-paced PvP experience.</p>
+                    <a href="#" class="btn">Play Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="gamemode-card">
+                <div class="gamemode-card fade-in">
                     <div class="gamemode-icon">
                         <img src="images/randomkits-icon.png" alt="RandomKits">
                     </div>
                     <h3>RandoKits</h3>
-                    <p>PvP server where you receive a random kit to fight with other players. Die and respawn with a new kit!</p>
-                    <a href="#" class="btn">Learn More</a>
+                    <p>PvP server where you receive a random kit to fight with other players. Die and respawn with a new kit! Adapt to win in this chaotic battleground.</p>
+                    <a href="#" class="btn">Play Now <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -85,23 +100,62 @@
 
     <section id="about">
         <div class="container">
-            <h2>About FeatheryMC</h2>
-            <p>FeatheryMC is a premium Minecraft network established in 2025, offering unique and exciting gameplay experiences for all players. Our mission is to create a friendly community where players can enjoy creative and competitive game modes.</p>
+            <div class="section-title fade-in">
+                <h2>About FeatheryMC</h2>
+                <p>The story behind our network</p>
+            </div>
+            <div class="about-content fade-in">
+                <p>FeatheryMC is a premium Minecraft network established in 2025, offering unique and exciting gameplay experiences for all players. Our mission is to create a friendly community where players can enjoy creative and competitive game modes.</p>
+                <p>With our dedicated team of developers and staff members, we continuously strive to bring you the best Minecraft experience possible.</p>
+            </div>
             <div class="features">
-                <div class="feature">
+                <div class="feature fade-in">
                     <i class="fas fa-server"></i>
                     <h3>High Performance</h3>
-                    <p>Our servers are optimized for smooth gameplay with minimal lag.</p>
+                    <p>Our servers are optimized for smooth gameplay with minimal lag, ensuring you have the best experience possible.</p>
                 </div>
-                <div class="feature">
+                <div class="feature fade-in">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Anti-Cheat</h3>
-                    <p>Advanced protection systems to ensure fair play for everyone.</p>
+                    <p>Advanced protection systems to ensure fair play for everyone. We take cheating seriously!</p>
                 </div>
-                <div class="feature">
+                <div class="feature fade-in">
                     <i class="fas fa-users"></i>
                     <h3>Community</h3>
-                    <p>Join our friendly community of players from around the world.</p>
+                    <p>Join our friendly community of players from around the world. Make friends and create memories together!</p>
+                </div>
+            </div>
+            
+            <div class="server-status fade-in">
+                <div class="status-header">
+                    <h3>Server Status</h3>
+                <div class="status-header">
+                    <h3>Server Status</h3>
+                    <div class="status-indicator">
+                        <div class="dot online" id="status-dot"></div>
+                        <span id="status-text">Online</span>
+                    </div>
+                </div>
+                <div class="status-details">
+                    <div class="status-item">
+                        <span>Players</span>
+                        <span id="current-players">0</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="players-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="status-item">
+                        <span>TPS</span>
+                        <span id="server-tps">20.0</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Uptime</span>
+                        <span id="server-uptime">24 hours</span>
+                    </div>
+                    <div class="status-item">
+                        <span>Version</span>
+                        <span>1.19+</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -109,23 +163,38 @@
 
     <section id="connect">
         <div class="container">
-            <h2>Connect With Us</h2>
+            <div class="section-title fade-in">
+                <h2>Connect With Us</h2>
+                <p>Join our community today</p>
+            </div>
             <div class="connect-info">
-                <div class="connect-card">
+                <div class="connect-card fade-in">
                     <i class="fas fa-gamepad"></i>
                     <h3>Join the Server</h3>
                     <p>Server IP: play.FeatheryMC.org</p>
                     <p>Version: 1.19+</p>
+                    <div class="mc-tooltip">
+                        <a href="#" class="btn" onclick="copyIP(); return false;">Copy IP <i class="fas fa-copy"></i></a>
+                        <span class="tooltip-text">Click to copy the server IP to your clipboard!</span>
+                    </div>
                 </div>
-                <div class="connect-card">
+                <div class="connect-card fade-in">
                     <i class="fab fa-discord"></i>
                     <h3>Join our Discord</h3>
-                    <a href="#" class="btn">Discord Server</a>
+                    <p>Chat with other players, get support, and stay updated!</p>
+                    <div class="mc-tooltip">
+                        <a href="#" class="btn">Discord Server <i class="fas fa-external-link-alt"></i></a>
+                        <span class="tooltip-text">Join our active Discord community!</span>
+                    </div>
                 </div>
-                <div class="connect-card">
+                <div class="connect-card fade-in">
                     <i class="fas fa-store"></i>
                     <h3>Support Us</h3>
-                    <a href="#" class="btn">Store</a>
+                    <p>Check out our store for ranks, cosmetics, and more!</p>
+                    <div class="mc-tooltip">
+                        <a href="#" class="btn">Store <i class="fas fa-external-link-alt"></i></a>
+                        <span class="tooltip-text">Support the server and get awesome perks!</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,33 +206,48 @@
                 <div class="footer-logo">
                     <img src="images/feather-logo.png" alt="FeatheryMC Logo">
                     <h3>FeatheryMC</h3>
+                    <p>FeatheryMC is a premium Minecraft network offering unique gameplay experiences. Join us today at play.FeatheryMC.org and become part of our growing community!</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Rules</a></li>
-                        <li><a href="#">Staff</a></li>
-                        <li><a href="#">Vote</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Rules</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Staff</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Vote</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Forums</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
                     <h4>Follow Us</h4>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <h4>Server IP</h4>
+                        <p style="color: var(--primary-color); font-weight: bold; font-size: 18px;">play.FeatheryMC.org</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 FeatheryMC. All rights reserved.</p>
-                <p>Not affiliated with Mojang AB.</p>
+                <p>Not affiliated with Mojang AB or Microsoft.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scroll to top button -->
+    <a href="#" class="scroll-top" id="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
