@@ -5,124 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FeatheryMC - Minecraft Network</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Minecraft&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Minecraft&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-logo">
-            <img src="images/logo.svg" alt="FeatheryMC">
-            <span>FeatheryMC</span>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/feather-logo.png" alt="FeatheryMC Logo">
+                <h1>FeatheryMC</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gamemodes">Gamemodes</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="nav-links">
-            <a href="#home" class="active">Home</a>
-            <a href="#gamemodes">Gamemodes</a>
-            <a href="#store">Store</a>
-            <a href="#discord" class="discord-btn">
-                <i class="fab fa-discord"></i> Discord
-            </a>
-        </div>
-    </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
+    <section id="hero">
+        <div class="container">
             <h1>Welcome to FeatheryMC</h1>
-            <p>Experience unique gamemodes and epic adventures</p>
-            <div class="server-info">
-                <span class="ip">play.featherymc.com</span>
-                <button class="copy-ip">Copy IP</button>
+            <p>Join the adventure on play.FeatheryMC.org</p>
+            <div class="server-ip">
+                <span id="ip">play.FeatheryMC.org</span>
+                <button onclick="copyIP()"><i class="fas fa-copy"></i> Copy IP</button>
             </div>
-            <div class="online-players">
-                <span class="dot"></span>
-                <span id="player-count">1,337 Players Online</span>
+            <div class="player-count">
+                <span>Players Online: <span id="player-count">Loading...</span></span>
             </div>
         </div>
     </section>
 
-    <section id="gamemodes" class="gamemodes">
-        <h2>Our Gamemodes</h2>
-        <div class="gamemode-grid">
-            <div class="gamemode-card">
-                <div class="card-content">
-                    <h3>Lifesteal</h3>
-                    <p>Steal hearts from players to increase your max health!</p>
-                    <span class="mode-tag">Steal4Lifes</span>
+    <section id="gamemodes">
+        <div class="container">
+            <h2>Our Gamemodes</h2>
+            <div class="gamemode-grid">
+                <div class="gamemode-card">
+                    <div class="gamemode-icon">
+                        <img src="images/lifesteal-icon.png" alt="Lifesteal">
+                    </div>
+                    <h3>Steal4Lifes</h3>
+                    <p>Kill other players to gain hearts but if you die you lose hearts. The ultimate survival challenge!</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
-            </div>
-            <div class="gamemode-card">
-                <div class="card-content">
-                    <h3>Dupe-Lifesteal</h3>
-                    <p>Combine duplication with heart stealing!</p>
-                    <span class="mode-tag">Dupe4Lifes</span>
+                
+                <div class="gamemode-card">
+                    <div class="gamemode-icon">
+                        <img src="images/dupe-icon.png" alt="Lifesteal Dupe">
+                    </div>
+                    <h3>Dupe4Lifes</h3>
+                    <p>A lifesteal server with one extra twist - a /dupe command to duplicate any item you can think of!</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
-            </div>
-            <div class="gamemode-card">
-                <div class="card-content">
+                
+                <div class="gamemode-card">
+                    <div class="gamemode-icon">
+                        <img src="images/bedwars-icon.png" alt="Bedwars">
+                    </div>
                     <h3>Endwars</h3>
-                    <p>Battle in the End dimension!</p>
-                    <span class="mode-tag">Bedwars</span>
+                    <p>Protect your bed and destroy others! Collect resources, upgrade your gear, and eliminate other teams.</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
-            </div>
-            <div class="gamemode-card">
-                <div class="card-content">
+                
+                <div class="gamemode-card">
+                    <div class="gamemode-icon">
+                        <img src="images/randomkits-icon.png" alt="RandomKits">
+                    </div>
                     <h3>RandoKits</h3>
-                    <p>Fight with random kits each round!</p>
-                    <span class="mode-tag">RandomKits</span>
+                    <p>PvP server where you receive a random kit to fight with other players. Die and respawn with a new kit!</p>
+                    <a href="#" class="btn">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="store" class="store">
-        <h2>Support the Network</h2>
-        <div class="store-packages">
-            <div class="package">
-                <h3>Feather</h3>
-                <div class="price">$5.99</div>
-                <ul>
-                    <li>Custom Chat Color</li>
-                    <li>2 Home Points</li>
-                    <li>Special Cosmetics</li>
-                </ul>
-                <button class="buy-btn">Purchase</button>
+    <section id="about">
+        <div class="container">
+            <h2>About FeatheryMC</h2>
+            <p>FeatheryMC is a premium Minecraft network established in 2025, offering unique and exciting gameplay experiences for all players. Our mission is to create a friendly community where players can enjoy creative and competitive game modes.</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-server"></i>
+                    <h3>High Performance</h3>
+                    <p>Our servers are optimized for smooth gameplay with minimal lag.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Anti-Cheat</h3>
+                    <p>Advanced protection systems to ensure fair play for everyone.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>Join our friendly community of players from around the world.</p>
+                </div>
             </div>
-            <div class="package featured">
-                <h3>Phoenix</h3>
-                <div class="price">$14.99</div>
-                <ul>
-                    <li>All Feather Features</li>
-                    <li>5 Home Points</li>
-                    <li>Priority Queue</li>
-                    <li>Exclusive Effects</li>
-                </ul>
-                <button class="buy-btn">Purchase</button>
-            </div>
-            <div class="package">
-                <h3>Dragon</h3>
-                <div class="price">$29.99</div>
-                <ul>
-                    <li>All Previous Features</li>
-                    <li>10 Home Points</li>
-                    <li>Custom Join Message</li>
-                    <li>Special Discord Role</li>
-                </ul>
-                <button class="buy-btn">Purchase</button>
+        </div>
+    </section>
+
+    <section id="connect">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <div class="connect-info">
+                <div class="connect-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Join the Server</h3>
+                    <p>Server IP: play.FeatheryMC.org</p>
+                    <p>Version: 1.19+</p>
+                </div>
+                <div class="connect-card">
+                    <i class="fab fa-discord"></i>
+                    <h3>Join our Discord</h3>
+                    <a href="#" class="btn">Discord Server</a>
+                </div>
+                <div class="connect-card">
+                    <i class="fas fa-store"></i>
+                    <h3>Support Us</h3>
+                    <a href="#" class="btn">Store</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.svg" alt="FeatheryMC">
-                <span>FeatheryMC</span>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/feather-logo.png" alt="FeatheryMC Logo">
+                    <h3>FeatheryMC</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Rules</a></li>
+                        <li><a href="#">Staff</a></li>
+                        <li><a href="#">Vote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FeatheryMC. All rights reserved.</p>
+                <p>Not affiliated with Mojang AB.</p>
             </div>
-            <p class="copyright">© 2023 FeatheryMC. Not affiliated with Mojang AB.</p>
         </div>
     </footer>
 
