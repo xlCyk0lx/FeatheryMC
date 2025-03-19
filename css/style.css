@@ -158,6 +158,8 @@ header .container {
     transition: all 0.3s ease;
 }
 
+.logo
+
 .logo:hover img {
     transform: rotate(10deg);
 }
@@ -222,6 +224,15 @@ nav ul li a:hover::after {
     overflow: hidden;
 }
 
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
 #hero::before {
     content: '';
     position: absolute;
@@ -230,14 +241,14 @@ nav ul li a:hover::after {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.9));
-    z-index: -1;
+    z-index: 2;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 20px;
     position: relative;
-    z-index: 2;
+    z-index: 3;
     animation: fadeIn 1.5s ease-out;
 }
 
@@ -299,6 +310,7 @@ nav ul li a:hover::after {
     color: var(--primary-color);
     font-size: 30px;
     cursor: pointer;
+    z-index: 3;
 }
 
 @keyframes bounce {
@@ -619,7 +631,6 @@ footer::before {
     line-height: 1.8;
 }
 
-/* Continuing footer styles */
 .footer-links h4, .footer-social h4 {
     margin-bottom: 25px;
     font-size: 20px;
@@ -769,6 +780,10 @@ footer::before {
 .status-details {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap:
+.status-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
@@ -875,6 +890,67 @@ footer::before {
     opacity: 1;
 }
 
+/* Scroll to top button */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--primary-dark);
+    transform: translateY(-5px);
+}
+
+/* Copy tooltip */
+.copy-tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 125, 0, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: tooltip-appear 0.3s ease-out;
+}
+
+.copy-tooltip.fade-out {
+    animation: tooltip-disappear 0.5s ease-out forwards;
+}
+
+@keyframes tooltip-appear {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@keyframes tooltip-disappear {
+    from { opacity: 1; transform: translate(-50%, -50%); }
+    to { opacity: 0; transform: translate(-50%, -40%); }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .footer-content {
@@ -963,93 +1039,3 @@ footer::before {
         grid-template-columns: 1fr;
     }
 }
-
-/* Minecraft-style loading animation */
-.mc-loading {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
-.mc-loading div {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: var(--primary-color);
-    animation: mc-loading 1.2s linear infinite;
-}
-
-.mc-loading div:nth-child(1) {
-    top: 8px;
-    left: 8px;
-    animation-delay: 0s;
-}
-
-.mc-loading div:nth-child(2) {
-    top: 8px;
-    left: 32px;
-    animation-delay: -0.4s;
-}
-
-.mc-loading div:nth-child(3) {
-    top: 8px;
-    left: 56px;
-    animation-delay: -0.8s;
-}
-
-.mc-loading div:nth-child(4) {
-    top: 32px;
-    left: 8px;
-    animation-delay: -0.4s;
-}
-
-.mc-loading div:nth-child(5) {
-    top: 32px;
-    left: 32px;
-    animation-delay: -0.8s;
-}
-
-.mc-loading div:nth-child(6) {
-    top: 32px;
-    left: 56px;
-    animation-delay: -1.2s;
-}
-
-.mc-loading div:nth-child(7) {
-    top: 56px;
-    left: 8px;
-    animation-delay: -0.8s;
-}
-
-.mc-loading div:nth-child(8) {
-    top: 56px;
-    left: 32px;
-    animation-delay: -1.2s;
-}
-
-.mc-loading div:nth-child(9) {
-    top: 56px;
-    left: 56px;
-    animation-delay: -1.6s;
-}
-
-@keyframes mc-loading {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
-
-/* Particle effect */
-.particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
